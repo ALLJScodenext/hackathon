@@ -5,7 +5,7 @@
 
 2. Change home page or style
 
-3. Cryptography, encrypt password
+3. Cryptography, encrypt password in ROUTES yet, so just thinking about it
 
 4. in main file(flask_project) add to class Post more contents(photo and video)
 

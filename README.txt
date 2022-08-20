@@ -18,3 +18,6 @@ python3
 
 // using crypt for passwords and usernames
 pip3 install flask-bcrypt
+
+//change size of image
+pip3 install Pillow
