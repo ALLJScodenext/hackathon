@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baf4e701-53de-4855-b027-6a7c4b1ffc1d" name="Changes" comment="Day 2 add gitignore">
-      <change afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskblog/static/profile_pics/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/create_post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks(for_me).txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks(for_me).txt" afterDir="false" />
-    </list>
+    <list default="true" id="baf4e701-53de-4855-b027-6a7c4b1ffc1d" name="Changes" comment="Homepage on 2 type of users" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +16,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,16 +29,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/student/Desktop/hackathon"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/student/Desktop/hackathon&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="hackathon" />

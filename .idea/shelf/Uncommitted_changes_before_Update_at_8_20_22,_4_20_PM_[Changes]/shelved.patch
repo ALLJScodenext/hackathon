@@ -1,0 +1,87 @@
+Index: flaskblog/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask_wtf import FlaskForm\nfrom flask_wtf.file import FileField, FileAllowed\nfrom flask_login import current_user\nfrom wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField\nfrom wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError\nfrom flaskblog.models import User\n\n\nclass RegistrationForm(FlaskForm):\n    username = StringField('Username',\n                           validators=[DataRequired(), Length(min=2, max=20)])\n    email = StringField('Email',\n                        validators=[DataRequired(), Email()])\n    password = PasswordField('Password', validators=[DataRequired()])\n    confirm_password = PasswordField('Confirm Password',\n                                     validators=[DataRequired(), EqualTo('password')])\n\n    key = BooleanField\n\n    submit = SubmitField('Sign Up')\n\n    def validate_username(self, username):\n        user = User.query.filter_by(username=username.data).first()\n        if user:\n            raise ValidationError('That username is taken. Please choose a different one.')\n\n    def validate_email(self, email):\n        user = User.query.filter_by(email=email.data).first()\n        if user:\n            raise ValidationError('That email is taken. Please choose a different one.')\n\n\nclass LoginForm(FlaskForm):\n    email = StringField('Email',\n                        validators=[DataRequired(), Email()])\n    password = PasswordField('Password', validators=[DataRequired()])\n    remember = BooleanField('Remember Me')\n    submit = SubmitField('Login')\n\n\nclass UpdateAccountForm(FlaskForm):\n    username = StringField('Username',\n                           validators=[DataRequired(), Length(min=2, max=20)])\n    email = StringField('Email',\n                        validators=[DataRequired(), Email()])\n    picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])\n    submit = SubmitField('Update')\n\n    def validate_username(self, username):\n        if username.data != current_user.username:\n            user = User.query.filter_by(username=username.data).first()\n            if user:\n                raise ValidationError('That username is taken. Please choose a different one.')\n\n    def validate_email(self, email):\n        if email.data != current_user.email:\n            user = User.query.filter_by(email=email.data).first()\n            if user:\n                raise ValidationError('That email is taken. Please choose a different one.')\n\n\nclass PostForm(FlaskForm):\n    title = StringField('Title', validators=[DataRequired()])\n    content = TextAreaField('Content', validators=[DataRequired()])\n    submit = SubmitField('Post')\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/flaskblog/forms.py b/flaskblog/forms.py
+--- a/flaskblog/forms.py	(revision 6cb3237f35715e6e6c78e94bf48001c5c9624b73)
++++ b/flaskblog/forms.py	(date 1661036612368)
+@@ -15,8 +15,6 @@
+     confirm_password = PasswordField('Confirm Password',
+                                      validators=[DataRequired(), EqualTo('password')])
+ 
+-    key = BooleanField
+-
+     submit = SubmitField('Sign Up')
+ 
+     def validate_username(self, username):
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"baf4e701-53de-4855-b027-6a7c4b1ffc1d\" name=\"Changes\" comment=\"Day 2 add gitignore\">\n      <change afterPath=\"$PROJECT_DIR$/.idea/hackathon.iml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/flaskblog/static/profile_pics/default.jpg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/flaskblog/templates/account.html\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/flaskblog/templates/create_post.html\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/flaskblog/templates/post.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/README.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/README.txt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/__init__.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/forms.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/forms.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/models.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/models.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/routes.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/routes.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/static/main.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/static/main.css\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/templates/about.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/templates/about.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/templates/home.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/templates/home.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/templates/layout.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/templates/layout.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/templates/login.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/templates/login.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/flaskblog/templates/register.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/flaskblog/templates/register.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/run.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/run.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/tasks(for_me).txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/tasks(for_me).txt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2Dbes3Zb6spIXHy1rPxK7o1fKlR\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"last_opened_file_path\": \"/Users/student/Desktop/hackathon\"\n  }\n}]]></component>\n  <component name=\"RunManager\">\n    <configuration name=\"run\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"hackathon\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/run.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"baf4e701-53de-4855-b027-6a7c4b1ffc1d\" name=\"Changes\" comment=\"\" />\n      <created>1660972414876</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1660972414876</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Flask5/15 day1/3\">\n      <created>1660986258406</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1660986258406</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Day 2 add gitignore\">\n      <created>1661018880096</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1661018880096</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"&quot;Flask5/15,day1/3&quot;\" />\n    <MESSAGE value=\"Flask5/15 day1/3\" />\n    <MESSAGE value=\"Day 2 add gitignore\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Day 2 add gitignore\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6cb3237f35715e6e6c78e94bf48001c5c9624b73)
++++ b/.idea/workspace.xml	(date 1661036333147)
+@@ -1,30 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="baf4e701-53de-4855-b027-6a7c4b1ffc1d" name="Changes" comment="Day 2 add gitignore">
+-      <change afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/flaskblog/static/profile_pics/default.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/account.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/create_post.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/post.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/__init__.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/forms.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/models.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/static/main.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/about.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/home.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/layout.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/login.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/register.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/tasks(for_me).txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks(for_me).txt" afterDir="false" />
+-    </list>
++    <list default="true" id="baf4e701-53de-4855-b027-6a7c4b1ffc1d" name="Changes" comment="Homepage on 2 type of users" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -107,7 +84,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1661018880096</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Homepage on 2 type of users">
++      <created>1661036179875</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1661036179875</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -126,6 +110,7 @@
+     <MESSAGE value="&quot;Flask5/15,day1/3&quot;" />
+     <MESSAGE value="Flask5/15 day1/3" />
+     <MESSAGE value="Day 2 add gitignore" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Day 2 add gitignore" />
++    <MESSAGE value="Homepage on 2 type of users" />
++    <option name="LAST_COMMIT_MESSAGE" value="Homepage on 2 type of users" />
+   </component>
+ </project>
+\ No newline at end of file
