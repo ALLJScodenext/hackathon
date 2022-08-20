@@ -1,0 +1,12 @@
+1. Change secret key
+    python3
+    import secrets
+    secrets.token_hex(16)
+
+2. Change home page or style
+
+3. Cryptography, encrypt password
+
+4. in main file(flask_project) add to class Post more contents(photo and video)
+
+//remember in files run.py and routes.py change flaskblog on flask_project(probably)
