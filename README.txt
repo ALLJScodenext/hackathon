@@ -15,3 +15,6 @@ python3
     // flask_project the name of main file in project
     from flask_project import db
         db.create_all()
+
+// using crypt for passwords and usernames
+pip3 install flask-bcrypt
