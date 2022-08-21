@@ -24,3 +24,15 @@ pip3 install Pillow
 
 //ngrok server
 pip3 install flask-ngrok
+
+//to use ngrok:
+/first open this file in terminal with sudo
+sudo python3 run.py
+/the second is open the port
+ngrok http 5000
+/and copy this link from this window in terminal
+
+//To change sql database
+sudo python3
+from flaskblog import db
+db.create_all()

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baf4e701-53de-4855-b027-6a7c4b1ffc1d" name="Changes" comment="Homepage on 2 type of users">
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/announcements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskblog/templates/calendars.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run2.py" afterDir="false" />
+    <list default="true" id="baf4e701-53de-4855-b027-6a7c4b1ffc1d" name="Changes" comment="Ready for server">
+      <change afterPath="$PROJECT_DIR$/site.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/__init__.py" afterDir="false" />
@@ -12,8 +10,11 @@
       <change beforePath="$PROJECT_DIR$/flaskblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/site.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskblog/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskblog/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskblog/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskblog/templates/announcements.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/announcements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskblog/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskblog/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661018880096</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ready for server">
+      <created>1661067699290</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661067699290</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +125,7 @@
     <MESSAGE value="&quot;Flask5/15,day1/3&quot;" />
     <MESSAGE value="Flask5/15 day1/3" />
     <MESSAGE value="Day 2 add gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 2 add gitignore" />
+    <MESSAGE value="Ready for server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready for server" />
   </component>
 </project>
