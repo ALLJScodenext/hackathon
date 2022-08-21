@@ -21,3 +21,6 @@ pip3 install flask-bcrypt
 
 //change size of image
 pip3 install Pillow
+
+//ngrok server
+pip3 install flask-ngrok

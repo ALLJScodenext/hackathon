@@ -58,11 +58,20 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-
 @app.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+
+@app.route("/announcements")
+def announcements():
+    return render_template('announcements.html', title='announcements')
+
+
+@app.route("/calendars")
+def calendars():
+    return render_template('calendars.html', title='calendars')
 
 
 def save_picture(form_picture):
